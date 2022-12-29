@@ -99,18 +99,11 @@ fetch(`../${fileName}`)
 function getName(data) { // Data is array of strings
     let name = '';
     let s = 3;
-    let e = data.length - 4;
+    let e = data.length - 3;
     for (let i = s; i < e; i++) {
         name += data[i] + ' ';
     }
     return name.toLowerCase();
-}
-function getGender(data) { // data is either M or F
-    if (data === 'M') {
-        return '<i class="fas text-info fa-mars"></i>';
-    } else if (data === 'F') {
-        return '<i class="fas text-pink fa-venus"></i>';
-    }
 }
 
 inputBar.addEventListener('input', search);
@@ -160,9 +153,6 @@ function setData(data){
                         </div>
                     </div>
                     <div class="row text-white">
-                        <div class="col-6 fw-light">
-                            Gender - <span class="text-bold text-info">${getGender(item[i - 4])}</span>
-                        </div>
                         <div class="col-6 fw-light">
                             Roll no. - <span class="text-bold text-info">${item[2]}</span>
                         </div>

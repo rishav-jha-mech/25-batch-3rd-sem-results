@@ -50,14 +50,25 @@ def main():
         sortedList = sorted(resultsDict, key=lambda x : resultsDict[x][cry],reverse=True)
 
         for key in sortedList:
-            f = open(f"Ranked-{subjectCodes[subjectInt]}-{rankingCriteria[criteriaInt]}-Sem7.txt", "a")
-            js = open(f"Ranked-{subjectCodes[subjectInt]}-{rankingCriteria[criteriaInt]}-Sem7.json", "a")
-            listToStr = ' '.join(map(str, resultsDict[key]))
+            '''
+                JSON File Writing
+            '''
+            js = open(f"Ranked-{subjectCodes[subjectInt]}-{rankingCriteria[criteriaInt]}-Sem3.json", "a")
             jsonData = json.dumps(resultsDict[key],indent=4)
-            js.write(f"{jsonData},\n")
-            f.write(f"{listToStr}\n")
+            if(sortedList[0] == key):
+                js.write("[")
+            elif (sortedList[-1] == key):
+                js.write(f"{jsonData}]\n")
+            else:
+                js.write(f"{jsonData},\n")
             js.close()
+            '''
+                Text File Writing
+            '''
+            f = open(f"Ranked-{subjectCodes[subjectInt]}-{rankingCriteria[criteriaInt]}-Sem3.txt", "a")
+            listToStr = ' '.join(map(str, resultsDict[key]))
+            f.write(f"{listToStr}\n")
             f.close()
 
-passedStudentsOnly()
-# main()
+# passedStudentsOnly()
+main()
