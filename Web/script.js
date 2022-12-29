@@ -2,7 +2,7 @@ const SastaReact = document.getElementById('main')
 downloadPDF = document.createElement('div');
 downloadPDF.setAttribute('class','item');
 downloadPDF.innerHTML = `
-<a href="https://github.com/rishav-jha-mech/25batch-3rd-sem-results/raw/main/UG-3rd.pdf" rel="noopener noreferrer"> <i class="fas bg-danger fa-file-pdf text-white fs-2"></i> Download PDF</a>
+<a href="https://github.com/rishav-jha-mech/25-batch-3rd-sem-results/raw/main/UG-3rd.pdf" rel="noopener noreferrer"> <i class="fas bg-danger fa-file-pdf text-white fs-2"></i> Download PDF</a>
 `
 SastaReact.appendChild(downloadPDF)
 
